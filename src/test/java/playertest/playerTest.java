@@ -1,6 +1,6 @@
 package playertest;
 
-import Player.Player;
+import player.Player;
 import junit.framework.TestCase;
 import org.junit.Assert;
 
@@ -10,5 +10,5 @@ public class playerTest extends TestCase {
         Player myPlayer = new Player();
         Assert.assertNotNull(myPlayer);
     }
-    
+
 }
