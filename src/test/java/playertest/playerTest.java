@@ -1,8 +1,8 @@
 package playertest;
 
+import junit.framework.Assert;
 import player.Player;
 import junit.framework.TestCase;
-import org.junit.Assert;
 
 public class playerTest extends TestCase {
 

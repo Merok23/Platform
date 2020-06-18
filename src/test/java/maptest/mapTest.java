@@ -1,8 +1,8 @@
 package maptest;
 
+import junit.framework.Assert;
 import junit.framework.TestCase;
 import map.Map;
-import org.junit.Assert;
 
 public class mapTest extends TestCase {
 
