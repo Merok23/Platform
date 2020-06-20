@@ -70,9 +70,9 @@ public class mapTest extends TestCase {
     public void test05YouCanSetThePlayerInTheMap() throws PositionIsOutOfBounds, PositionIsInvalidForPlayerAPartOfTheBodyIsOutOfBounds {
 
         Map myMap = new Map(10, 10);
-        Position aPosition = new Position(1,2);
+        Position aPosition = new Position(2,1);
 
-        myMap.setPlayerAt(1, 2);
+        myMap.setPlayerAt(2, 1);
 
         Assert.assertEquals(aPosition,myMap.returnPlayerPosition());
 

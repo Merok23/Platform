@@ -20,7 +20,7 @@ public class Body {
 
         this.myPositions = new ArrayList<Position>();
 
-        for(int x = positionX - 1; x < positionX + 1; x++){
+        for(int x = positionX - 2; x < positionX + 2; x++){
             for(int y = positionY -1; y < positionY + 1; y++){
 
                 try{

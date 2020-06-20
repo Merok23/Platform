@@ -4,7 +4,7 @@ import errorsandexceptions.PositionIsInvalidForPlayerAPartOfTheBodyIsOutOfBounds
 import map.Map;
 import position.Position;
 
-// player has to be 3x3 tiles
+// player has to be 5x3 tiles
 
 public class Player {
 
