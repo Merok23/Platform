@@ -1,0 +1,14 @@
+it has to be able to jump
+it has to be able to move
+it has to have collition 
+should have gravity
+it needs to have a level completion goal
+(maybe an enemy?)
+screen change? (maybe zoom? and load the whole level?)
+character always on the middle? (not when it jumps)
+power up?
+health?
+lives?
+dash?
+sprint?
+double jump?

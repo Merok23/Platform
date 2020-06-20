@@ -9,7 +9,7 @@ public class Map {
     private List<Cell> mapCells;
 
     public Map () {
-
+        
         this.mapCells = new ArrayList<Cell>();
         this.createTheMap(mapCells,40,40);
 
@@ -22,26 +22,19 @@ public class Map {
 
     }
 
-    private void createTheMap (List<Cell> mapCells, int height, int wide) {
-
-        for(int row = 0; row < height; row++){
-
-            for(int column = 0; column < wide; column++){
-
-                Cell oneCell = new Cell (column,row);
-                mapCells.add(oneCell);
-
-            }
-
-        }
-
-    }
-
     public void setCellSolidAt (int positionX, int positionY) {
 
         Cell requiredCell = this.searchForCell(positionX, positionY);
 
         requiredCell.changeStatusToSolid();
+
+    }
+
+    public boolean cellIsSolid (int positionX, int positionY) {
+
+        Cell requiredCell = this.searchForCell(positionX, positionY);
+
+        return requiredCell.isSolid();
 
     }
 
@@ -57,11 +50,18 @@ public class Map {
 
     }
 
-    public boolean cellIsSolid (int positionX, int positionY) {
+    private void createTheMap (List<Cell> mapCells, int height, int wide) {
 
-        Cell requiredCell = this.searchForCell(positionX, positionY);
+        for(int row = 0; row < height; row++){
 
-        return requiredCell.isSolid();
+            for(int column = 0; column < wide; column++){
+
+                Cell oneCell = new Cell (column,row);
+                mapCells.add(oneCell);
+
+            }
+
+        }
 
     }
 }
