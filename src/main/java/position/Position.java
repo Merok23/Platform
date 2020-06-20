@@ -1,4 +1,4 @@
-package cell.position;
+package position;
 
 public class Position {
 
@@ -25,6 +25,15 @@ public class Position {
         distance = distance + Math.abs(this.positionY - aPosition.getY());
 
         return distance;
+    }
+
+    @Override
+    public boolean equals(Object positionToBeCompared){
+
+        Position culpritPosition = (Position) positionToBeCompared;
+
+        return this.measureDistance(culpritPosition) == 0;
+
     }
 
 }

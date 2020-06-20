@@ -1,4 +1,13 @@
 -------------------------------------------------------------------------------
 Test set: maptest.mapTest
 -------------------------------------------------------------------------------
-Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.019 sec
+Tests run: 7, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.075 sec <<< FAILURE!
+test05YouCanSetThePlayerInTheMap(maptest.mapTest)  Time elapsed: 0.055 sec  <<< ERROR!
+java.lang.NullPointerException
+	at player.Body.<init>(Body.java:30)
+	at player.Body.checkIfSurroundingsAreValid(Body.java:38)
+	at player.Player.surroundingsAreValid(Player.java:40)
+	at map.Map.positionIsValidForPlayer(Map.java:59)
+	at map.Map.setPlayerAt(Map.java:51)
+	at maptest.mapTest.test05YouCanSetThePlayerInTheMap(mapTest.java:75)
+

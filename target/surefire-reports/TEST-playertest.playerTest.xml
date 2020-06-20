@@ -59,5 +59,5 @@
     <property name="sun.cpu.endian" value="little"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="playertest.playerTest" name="test00PlayerExistsAndHisRefferenceItsnotNull" time="0"/>
+  <testcase classname="playertest.playerTest" name="test00PlayerExistsAndHisReferenceIsNotNull" time="0"/>
 </testsuite>
