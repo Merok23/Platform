@@ -1,5 +1,6 @@
 package maptest;
 
+import errorsandexceptions.PositionIsOutOfBounds;
 import junit.framework.Assert;
 import junit.framework.TestCase;
 import map.Map;
@@ -28,7 +29,7 @@ public class mapTest extends TestCase {
 
     }
 //should use mockito :(
-    public void test02YouCanChangeTheStateOfACellInTheMap(){
+    public void test02YouCanChangeTheStateOfACellInTheMap() throws PositionIsOutOfBounds {
 
         Map myMap = new Map();
 
@@ -36,6 +37,31 @@ public class mapTest extends TestCase {
 
         Assert.assertTrue(myMap.cellIsSolid(2,2));
 
+
+    }
+
+    public void test03TheMapGetsCreatedWithASolidGround() throws PositionIsOutOfBounds {
+
+        Map myMap = new Map(10, 10);
+
+        for(int groundPosition = 0; groundPosition < 10; groundPosition++){
+            Assert.assertTrue(myMap.cellIsSolid(groundPosition, 0));
+        }
+
+    }
+
+    public void test04YouSelectACellOutOfBoundsAndGetTheException(){
+
+        boolean pass = false;
+        Map myMap = new Map(10,10);
+
+        try{
+            myMap.setCellSolidAt(10,10);
+        }catch (PositionIsOutOfBounds positionOutOfBounds){
+            pass = true;
+        }
+
+        Assert.assertTrue(pass);
 
     }
 }
