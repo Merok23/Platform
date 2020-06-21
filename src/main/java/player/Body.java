@@ -8,6 +8,8 @@ import position.Position;
 import java.util.ArrayList;
 import java.util.List;
 
+//The center of the body in a 5x3 is the 2, 1 (position) (god bless starting to count at 0)
+
 public class Body {
 
     private List<Position> myPositions;

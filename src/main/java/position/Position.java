@@ -36,4 +36,9 @@ public class Position {
 
     }
 
+    public void incrementX(int incrementValue) {
+
+        this.positionX = this.positionX + incrementValue; // what if it collisions/reaches out of bounds?
+
+    }
 }
