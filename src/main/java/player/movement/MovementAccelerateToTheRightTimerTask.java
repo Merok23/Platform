@@ -19,6 +19,7 @@ public class MovementAccelerateToTheRightTimerTask extends TimerTask {
         this.myTimer = thisTaskTimer;
     }
 
+    
     @Override
     public void run() {
         if (this.velocity < this.maxVelocity) this.velocity++;
