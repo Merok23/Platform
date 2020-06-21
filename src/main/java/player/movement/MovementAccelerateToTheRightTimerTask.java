@@ -21,9 +21,9 @@ public class MovementAccelerateToTheRightTimerTask extends TimerTask {
 
     @Override
     public void run() {
-        this.velocity++;
+        if (this.velocity < this.maxVelocity) this.velocity++;
         this.position.incrementX(1*velocity);
-        if (this.velocity == this.maxVelocity) myTimer.cancel();
+       // if (this.velocity == this.maxVelocity) myTimer.cancel();
     }
 
     public int getVelocity() {

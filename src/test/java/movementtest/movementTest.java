@@ -10,24 +10,23 @@ public class movementTest extends TestCase {
     public void test00MovementGetsCreatedAndItsReferenceIsNotNull(){
 
         Position myPosition = new Position (0,0);
-        Movement myMovement = new Movement(myPosition);
+        Movement myMovement = new Movement(myPosition, 0);
 
         Assert.assertNotNull(myMovement);
 
     }
 
-    public void test01YouCanMoveInOneDirection() throws InterruptedException {
+    public void test01YouCanMoveInOneDirectionForFiveSecondsWithMaxVelocityFive() throws InterruptedException {
 
         Position myPosition = new Position(1, 1);
-        Movement myMovement = new Movement(myPosition);
-        int maxSpeed = 5; // blocks per second
+        Movement myMovement = new Movement(myPosition,5);
         Thread aThread = new Thread();
 
-        myMovement.accelerateRight(maxSpeed);
-        aThread.sleep(5000);
+        myMovement.accelerateRight();
+        aThread.sleep(20000);
 
         Assert.assertEquals(5, myMovement.getVelocity());
-        Assert.assertEquals(51,myPosition.getX());
+        Assert.assertEquals(16,myPosition.getX());
 
 
     }

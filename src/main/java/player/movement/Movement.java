@@ -12,18 +12,18 @@ public class Movement {
     private MovementAccelerateToTheRightTimerTask myTaskForGoingRight;
 
 
-    public Movement(Position initialPosition) {
+    public Movement(Position initialPosition,int maxVelocityDesired) {
 
         this.myTimer = new Timer();
         this.myPosition = initialPosition;
         this.velocity = 0;
-        this.myTaskForGoingRight = new MovementAccelerateToTheRightTimerTask(this.myPosition, this.velocity,5, this.myTimer);
+        this.myTaskForGoingRight = new MovementAccelerateToTheRightTimerTask(this.myPosition, this.velocity,maxVelocityDesired, this.myTimer);
 
     }
 
-    public void accelerateRight(int maxSpeed) {
+    public void accelerateRight() {
 
-        myTimer.scheduleAtFixedRate(this.myTaskForGoingRight,0, 1);
+        myTimer.scheduleAtFixedRate(this.myTaskForGoingRight,0, 1000);
 
     }
 
