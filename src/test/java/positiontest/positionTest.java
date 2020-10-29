@@ -1,6 +1,6 @@
 package positiontest;
 
-import cell.position.Position;
+import position.Position;
 import junit.framework.Assert;
 import junit.framework.TestCase;
 

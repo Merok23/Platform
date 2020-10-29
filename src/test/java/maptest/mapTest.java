@@ -1,10 +1,12 @@
 package maptest;
 
+import errorsandexceptions.PositionIsInvalidForPlayerAPartOfTheBodyIsOutOfBounds;
 import errorsandexceptions.PositionIsOutOfBounds;
 import junit.framework.Assert;
 import junit.framework.TestCase;
 import map.Map;
 import player.Player;
+import position.Position;
 
 public class mapTest extends TestCase {
 
@@ -64,4 +66,31 @@ public class mapTest extends TestCase {
         Assert.assertTrue(pass);
 
     }
+
+    public void test05YouCanSetThePlayerInTheMap() throws PositionIsOutOfBounds, PositionIsInvalidForPlayerAPartOfTheBodyIsOutOfBounds {
+
+        Map myMap = new Map(10, 10);
+        Position aPosition = new Position(2,1);
+
+        myMap.setPlayerAt(2, 1);
+
+        Assert.assertEquals(aPosition,myMap.returnPlayerPosition());
+
+    }
+
+    public void test06ExceptionForInvalidPositionForPlayerIsThrown() throws PositionIsOutOfBounds {
+
+        Map myMap = new Map(10, 10);
+        Boolean pass = false;
+
+        try {
+            myMap.setPlayerAt(0, 0);
+        } catch (PositionIsInvalidForPlayerAPartOfTheBodyIsOutOfBounds positionIsInvalidForPlayerAPartOfTheBodyIsOutOfBounds) {
+            pass = true;
+        }
+
+        Assert.assertTrue(pass);
+
+    }
+
 }

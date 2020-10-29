@@ -1,6 +1,6 @@
 package cell;
 
-import cell.position.Position;
+import position.Position;
 
 public class Cell {
 

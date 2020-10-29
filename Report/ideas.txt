@@ -1,5 +1,6 @@
 it has to be able to jump
 it has to be able to move
+it has to be able to duck
 it has to have collition 
 should have gravity
 it needs to have a level completion goal

@@ -1,4 +1,4 @@
-package cell.position;
+package position;
 
 public class Position {
 
@@ -27,4 +27,18 @@ public class Position {
         return distance;
     }
 
+    @Override
+    public boolean equals(Object positionToBeCompared){
+
+        Position culpritPosition = (Position) positionToBeCompared;
+
+        return this.measureDistance(culpritPosition) == 0;
+
+    }
+
+    public void incrementX(int incrementValue) {
+
+        this.positionX = this.positionX + incrementValue; // what if it collisions/reaches out of bounds?
+
+    }
 }
