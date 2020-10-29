@@ -17,7 +17,6 @@ public class Map {
         
         this.mapCells = new ArrayList<Cell>();
         this.createTheMap(mapCells,40,40);
-        this.myPlayer = new Player();
 
     }
 
@@ -48,6 +47,7 @@ public class Map {
 
     public void setPlayerAt(int positionX, int positionY) throws PositionIsOutOfBounds, PositionIsInvalidForPlayerAPartOfTheBodyIsOutOfBounds {
 
+        myPlayer = new Player();
         this.positionIsValidForPlayer(positionX,positionY);
         myPlayer.setCentralPosition(this, positionX,positionY);
 
@@ -102,9 +102,21 @@ public class Map {
 
     }
 
-    public Position returnPlayerPosition() {
+    public Position getPlayerPosition() {
 
         return myPlayer.getCentralPosition();
+
+    }
+
+    public void movePlayerToTheRight() throws PositionIsInvalidForPlayerAPartOfTheBodyIsOutOfBounds {
+
+        myPlayer.moveToTheRight();
+
+    }
+
+    public void movePlayerToTheLeft() throws PositionIsInvalidForPlayerAPartOfTheBodyIsOutOfBounds {
+
+        myPlayer.moveToTheLeft();
 
     }
 }

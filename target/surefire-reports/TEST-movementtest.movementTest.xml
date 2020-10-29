@@ -60,6 +60,6 @@
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
   <testcase classname="movementtest.movementTest" name="test00MovementGetsCreatedAndItsReferenceIsNotNull" time="0"/>
-  <testcase classname="movementtest.movementTest" name="test02YouCanMoveToTheLeft" time="0"/>
   <testcase classname="movementtest.movementTest" name="test01YouCanMoveToTheRight" time="0"/>
+  <testcase classname="movementtest.movementTest" name="test02YouCanMoveToTheLeft" time="0"/>
 </testsuite>
