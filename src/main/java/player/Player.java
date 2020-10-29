@@ -14,13 +14,7 @@ public class Player {
     private Movement myMovement;
     private Map myMap;
 
-
-    public Player(){
-        this.myBody = new Body();
-    }
-
-
-    public void setCentralPosition(Map map, int positionX, int positionY) throws PositionIsInvalidForPlayerAPartOfTheBodyIsOutOfBounds {
+    public Player(Map map, int positionX, int positionY) throws PositionIsInvalidForPlayerAPartOfTheBodyIsOutOfBounds {
 
         this.myMap = map;
         this.myCentralPosition = new Position(positionX, positionY);
@@ -35,12 +29,6 @@ public class Player {
 
     }
 
-    public void surroundingsAreValid(Map map, int positionX, int positionY) throws PositionIsInvalidForPlayerAPartOfTheBodyIsOutOfBounds {
-
-        this.myBody.checkIfSurroundingsAreValid(map,positionX,positionY);
-
-    }
-
     public void moveToTheRight() throws PositionIsInvalidForPlayerAPartOfTheBodyIsOutOfBounds {
 
         this.myBody.checkIfSurroundingsAreValid(myMap,myCentralPosition.getX()+1,myCentralPosition.getY());
@@ -52,5 +40,13 @@ public class Player {
 
         this.myBody.checkIfSurroundingsAreValid(myMap,myCentralPosition.getX()-1, myCentralPosition.getY());
         myMovement.moveLeft();
+
     }
+/*
+    public void surroundingsAreValid(Map map, int positionX, int positionY) throws PositionIsInvalidForPlayerAPartOfTheBodyIsOutOfBounds {
+
+        this.myBody.checkIfSurroundingsAreValid(map,positionX,positionY);
+
+    }
+ */
 }

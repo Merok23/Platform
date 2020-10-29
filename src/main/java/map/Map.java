@@ -25,7 +25,6 @@ public class Map {
         this.mapCells = new ArrayList<Cell>();
         this.createTheMap(mapCells, height, wide);
         this.makeGroundSolid(wide);
-        this.myPlayer = new Player();
 
     }
 
@@ -47,16 +46,32 @@ public class Map {
 
     public void setPlayerAt(int positionX, int positionY) throws PositionIsOutOfBounds, PositionIsInvalidForPlayerAPartOfTheBodyIsOutOfBounds {
 
-        myPlayer = new Player();
-        this.positionIsValidForPlayer(positionX,positionY);
-        myPlayer.setCentralPosition(this, positionX,positionY);
+        this.positionIsValid(positionX,positionY);
+        myPlayer = new Player(this, positionX, positionY);
 
     }
 
-    private void positionIsValidForPlayer(int positionX, int positionY) throws PositionIsOutOfBounds, PositionIsInvalidForPlayerAPartOfTheBodyIsOutOfBounds {
+    public void positionIsValid(int positionX, int positionY) throws PositionIsOutOfBounds {
 
-        this.positionIsValid(positionX,positionY);
-        this.myPlayer.surroundingsAreValid(this,positionX,positionY);
+        this.searchForCell(positionX,positionY);
+
+    }
+
+    public Position getPlayerPosition() {
+
+        return myPlayer.getCentralPosition();
+
+    }
+
+    public void movePlayerToTheRight() throws PositionIsInvalidForPlayerAPartOfTheBodyIsOutOfBounds {
+
+        myPlayer.moveToTheRight();
+
+    }
+
+    public void movePlayerToTheLeft() throws PositionIsInvalidForPlayerAPartOfTheBodyIsOutOfBounds {
+
+        myPlayer.moveToTheLeft();
 
     }
 
@@ -96,27 +111,4 @@ public class Map {
 
     }
 
-    public void positionIsValid(int positionX, int positionY) throws PositionIsOutOfBounds {
-
-        this.searchForCell(positionX,positionY);
-
-    }
-
-    public Position getPlayerPosition() {
-
-        return myPlayer.getCentralPosition();
-
-    }
-
-    public void movePlayerToTheRight() throws PositionIsInvalidForPlayerAPartOfTheBodyIsOutOfBounds {
-
-        myPlayer.moveToTheRight();
-
-    }
-
-    public void movePlayerToTheLeft() throws PositionIsInvalidForPlayerAPartOfTheBodyIsOutOfBounds {
-
-        myPlayer.moveToTheLeft();
-
-    }
 }
