@@ -6,28 +6,24 @@ import java.util.Timer;
 
 public class Movement {
 
-    private int velocity; // acceleration is always 1 cell per second
     private Position myPosition;
-    private Timer myTimer;
-    private MovementAccelerateToTheRightTimerTask myTaskForGoingRight;
 
 
-    public Movement(Position initialPosition,int maxVelocityDesired) {
+    public Movement(Position initialPosition) {
 
-        this.myTimer = new Timer();
         this.myPosition = initialPosition;
-        this.velocity = 0;
-        this.myTaskForGoingRight = new MovementAccelerateToTheRightTimerTask(this.myPosition, this.velocity,maxVelocityDesired, this.myTimer);
 
     }
 
-    public void accelerateRight() {
+    public void moveRight() {
 
-        myTimer.scheduleAtFixedRate(this.myTaskForGoingRight,0, 1000);
+        myPosition.incrementX(1);
 
     }
 
-    public int getVelocity(){
-        return this.myTaskForGoingRight.getVelocity();
+    public void moveLeft() {
+
+        myPosition.incrementX(-1);
+
     }
 }

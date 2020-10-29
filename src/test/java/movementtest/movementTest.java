@@ -12,41 +12,34 @@ public class movementTest extends TestCase {
     public void test00MovementGetsCreatedAndItsReferenceIsNotNull(){
 
         Position myPosition = new Position (0,0);
-        Movement myMovement = new Movement(myPosition, 0);
+        Movement myMovement = new Movement(myPosition);
 
         Assert.assertNotNull(myMovement);
 
     }
-/*
-    public void test01YouCanMoveInOneDirectionForFiveSecondsWithMaxVelocityFive() throws InterruptedException {
+
+    public void test01YouCanMoveToTheRight() {
 
         Position myPosition = new Position(1, 1);
-        Movement myMovement = new Movement(myPosition,5);
-        Thread aThread = new Thread();
+        Movement myMovement = new Movement(myPosition);
 
-        myMovement.accelerateRight();
-        aThread.sleep(5000);
+        myMovement.moveRight();
 
-        Assert.assertEquals(5, myMovement.getVelocity());
-        Assert.assertEquals(21,myPosition.getX());
+        Assert.assertEquals(2,myPosition.getX());
 
 
     }
 
-    public void test02YouCanMoveInOneDirectionForTwentySecondsAndThePositionIsCorrect() throws InterruptedException {
+    public void test02YouCanMoveToTheLeft(){
 
-        Position myPosition = new Position(1, 1);
-        Movement myMovement = new Movement(myPosition,5);
-        Thread aThread = new Thread();
+        Position myPosition = new Position(2,1);
+        Movement myMovement = new Movement(myPosition);
 
-        myMovement.accelerateRight();
-        aThread.sleep(20000);
+        myMovement.moveLeft();
 
-        Assert.assertEquals(5, myMovement.getVelocity());
-        Assert.assertEquals(96,myPosition.getX());
+        Assert.assertEquals(1, myPosition.getX());
 
 
     }
 
-*/
 }
