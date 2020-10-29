@@ -80,11 +80,11 @@ public class mapTest extends TestCase {
 
     public void test06ExceptionForInvalidPositionForPlayerIsThrown() throws PositionIsOutOfBounds {
 
-        Map myMap = new Map(10,10);
+        Map myMap = new Map(10, 10);
         Boolean pass = false;
 
         try {
-            myMap.setPlayerAt(0,0);
+            myMap.setPlayerAt(0, 0);
         } catch (PositionIsInvalidForPlayerAPartOfTheBodyIsOutOfBounds positionIsInvalidForPlayerAPartOfTheBodyIsOutOfBounds) {
             pass = true;
         }
@@ -92,6 +92,5 @@ public class mapTest extends TestCase {
         Assert.assertTrue(pass);
 
     }
-
 
 }
