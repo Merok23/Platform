@@ -5,7 +5,6 @@ import errorsandexceptions.PositionIsOutOfBounds;
 import junit.framework.Assert;
 import junit.framework.TestCase;
 import map.Map;
-import player.Player;
 import position.Position;
 
 public class mapTest extends TestCase {
@@ -74,7 +73,7 @@ public class mapTest extends TestCase {
 
         myMap.setPlayerAt(2, 1);
 
-        Assert.assertEquals(aPosition,myMap.returnPlayerPosition());
+        Assert.assertEquals(aPosition,myMap.getPlayerPosition());
 
     }
 
@@ -91,6 +90,49 @@ public class mapTest extends TestCase {
 
         Assert.assertTrue(pass);
 
+    }
+
+    public void test07PlayerCanBeIssuedToMoveRight() throws PositionIsOutOfBounds, PositionIsInvalidForPlayerAPartOfTheBodyIsOutOfBounds {
+
+        Map myMap = new Map (10, 10);
+        Position aPosition = new Position(6,1);
+
+        myMap.setPlayerAt(5, 1);
+        myMap.movePlayerToTheRight();
+
+        Assert.assertEquals(aPosition,myMap.getPlayerPosition());
+
+    }
+
+    public void test08PlayerCanBeIssuedToMoveLeft() throws PositionIsOutOfBounds, PositionIsInvalidForPlayerAPartOfTheBodyIsOutOfBounds {
+
+        Map myMap = new Map (10, 10);
+        Position aPosition = new Position(4,1);
+
+        myMap.setPlayerAt(5, 1);
+        myMap.movePlayerToTheLeft();
+
+        Assert.assertEquals(aPosition, myMap.getPlayerPosition());
+
+    }
+
+    public void test08IfPlayerMovesToAWallTheExceptionForInvalidPositionIsThrown() throws PositionIsOutOfBounds {
+        Map myMap = new Map (10, 10);
+        boolean pass = false;
+
+        try {
+            myMap.setPlayerAt(8, 1);
+        } catch (PositionIsInvalidForPlayerAPartOfTheBodyIsOutOfBounds positionIsInvalidForPlayerAPartOfTheBodyIsOutOfBounds) {
+            pass = false;
+        }
+
+        try {
+            myMap.movePlayerToTheRight();
+        } catch (PositionIsInvalidForPlayerAPartOfTheBodyIsOutOfBounds positionIsInvalidForPlayerAPartOfTheBodyIsOutOfBounds) {
+            pass = true;
+        }
+
+        Assert.assertTrue(pass);
     }
 
 }
