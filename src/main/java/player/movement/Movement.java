@@ -1,9 +1,6 @@
 package player.movement;
 
 import position.Position;
-
-import java.util.Timer;
-
 public class Movement {
 
     private Position myPosition;

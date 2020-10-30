@@ -14,10 +14,6 @@ public class Body {
 
     private List<Position> myPositions;
 
-    public Body (){
-
-    }
-
     public Body(Map map, int positionX, int positionY) throws PositionIsInvalidForPlayerAPartOfTheBodyIsOutOfBounds {
 
         this.myPositions = new ArrayList<Position>();
